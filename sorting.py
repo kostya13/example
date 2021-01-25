@@ -2,13 +2,26 @@
 Функции сортировки
 """
 
+def _validate(input_list):
+    for e in input_list:
+        if not isinstance(e, int):
+            raise RuntimeError(f'Элемент "{e}" не является числом')
+
 
 def bubble_sort(unsorted_data: list) -> list:
     """Сортировка методом пузырька
     :param unsorted_data Несортированные данные
     :return Сортированные данные
     """
+    _validate(unsorted_data)
+    data = unsorted_data[:]
+    for element in range(len(unsorted_data) - 1, 0, -1):
+        for current in range(0, element):
+            if data[current] > data[current + 1]:
+                data[current], data[current + 1] = (
+                    data[current + 1], data[current])
 
+    return data
 
 def insert_sort(unsorted_data: list) -> list:
     """Сортировка методом вставки
