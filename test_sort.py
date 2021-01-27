@@ -7,7 +7,7 @@ import pytest
 
 DEFAULT_LIST = [3, 1, 4, 5, 2]
 EMPTY_LIST = []
-NEGATIVE_LIST = [3, -1, 4, 5, -2]
+NEGATIVE_LIST = [-9, -1, 6, 8, 22]
 NONVALID_LIST = [3, 'one', 4, 5, '-2']
 
 
@@ -51,10 +51,10 @@ def test_insert_empty():
 
 
 def test_insert_negative():
-    test_list = NEGATIVE_LIST
+    test_list = [-3, 7, 1]
     result = sorting.insert_sort(test_list)
     test_list.sort()
-    assert result == test_list
+    assert result == [-3, 1, 7]
 
 
 def test_insert_not_integer():
