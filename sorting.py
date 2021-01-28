@@ -33,11 +33,10 @@ def insert_sort(unsorted_data: list) -> list:
     for i in range(1, len(data)):
         current = data[i]
         j = i - 1
-        while data[i] < data[j] and j >= 0:
-            data[i], data[j] = data[j], data[i]
+        while data[j] > current and j >= 0:
+            data[j + 1] = data[j]
             j = j - 1
-        j = j + 1
-        data[j] = current
+        data[j + 1] = current
 
     return data
 
