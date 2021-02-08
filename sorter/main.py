@@ -2,8 +2,7 @@
 Главный модуль программы
 Точка старта
 """
-import loader
-import sorting
+from sorter import loader, sorting
 import click
 
 
